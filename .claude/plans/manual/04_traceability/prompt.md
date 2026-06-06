@@ -1,12 +1,10 @@
-# ============================================================
 # STEP 4: COVERAGE ASSURANCE (Traceability & Gap Analysis)
-# ============================================================
-# HOW TO USE:
-# 1. Send this prompt AFTER reviewing the decomposition output from Step 3
-# 2. Review the list of scenarios the AI generates
-# 3. Add any missing scenarios
-# 4. Confirm completion → move to Step 5
-# ============================================================
+
+> **How to use:**
+> 1. Send this prompt AFTER reviewing the decomposition output from Step 3
+> 2. Review the list of scenarios the AI generates
+> 3. Add any missing scenarios
+> 4. Confirm completion → move to Step 5
 
 ---START---
 

@@ -1,12 +1,10 @@
-# ============================================================
 # STEP 5: DETAILED TEST CASE GENERATION (RBT & TC Generation)
-# ============================================================
-# HOW TO USE:
-# 1. Send this prompt AFTER reviewing and confirming scenarios in Step 4
-# 2. Customize the [guidance] sections to focus on specific modules if needed
-# 3. If there are many modules → ask the AI to generate one module at a time
-# 4. Review test cases → move to Step 6
-# ============================================================
+
+> **How to use:**
+> 1. Send this prompt AFTER reviewing and confirming scenarios in Step 4
+> 2. Customize the `[guidance]` sections to focus on specific modules if needed
+> 3. If there are many modules → ask the AI to generate one module at a time
+> 4. Review test cases → move to Step 6
 
 ---START---
 

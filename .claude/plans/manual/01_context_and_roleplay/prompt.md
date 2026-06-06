@@ -1,12 +1,10 @@
-# ============================================================
 # STEP 1: CONTEXT INITIALIZATION (Context & Role-play)
-# ============================================================
-# HOW TO USE:
-# 1. Copy the content below the "---START---" line
-# 2. Replace all [...] placeholders with your actual data
-# 3. Paste into an AI chat and send
-# 4. Wait for the AI to confirm it understands the context before moving to Step 2
-# ============================================================
+
+> **How to use:**
+> 1. Copy the content below the `---START---` line
+> 2. Replace all `[...]` placeholders with your actual data
+> 3. Paste into an AI chat and send
+> 4. Wait for the AI to confirm it understands the context before moving to Step 2
 
 ---START---
 
