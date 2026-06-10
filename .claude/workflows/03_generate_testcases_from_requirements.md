@@ -1,14 +1,14 @@
 ---
 description: Generate manual test cases quickly from requirements (QUICK mode — no 6-step process).
 skills:
-  - rbt_manual_testing
+  - rbt-manual-testing
 ---
 
 # Workflow: Generate Manual Test Cases Quickly from Requirements
 
-> **MANDATORY SKILL:** You MUST load and carefully read the **`rbt_manual_testing`** skill before starting this task. Use the skill's **QUICK mode**.
+> **MANDATORY SKILL:** You MUST load and carefully read the **`rbt-manual-testing`** skill (at `.claude/skills/rbt-manual-testing/SKILL.md`) before starting this task. Use the skill's **QUICK mode**.
 
-This workflow uses the **QUICK mode** of the `rbt_manual_testing` skill to generate test cases rapidly from existing requirements.
+This workflow uses the **QUICK mode** of the `rbt-manual-testing` skill to generate test cases rapidly from existing requirements.
 
 ## Principles
 
@@ -28,7 +28,7 @@ This workflow uses the **QUICK mode** of the `rbt_manual_testing` skill to gener
 4. **Field-Level Validation** — for each input field on the form/UI:
    - List every input field individually.
    - Generate validation test cases **per field** based on its type (text, email, phone, date, number, dropdown, file upload, password, etc.).
-   - Apply the **Field-Level Validation Table** from the `rbt_manual_testing` skill to select appropriate validations.
+   - Apply the **Field-Level Validation Table** from the `rbt-manual-testing` skill to select appropriate validations.
    - **Do NOT** combine validations for multiple fields into a single test case.
 5. **Generate test cases with all required fields:**
    - TC ID (format: `[PROJECT]_[MODULE]_TC_[NUMBER]`)

@@ -1,19 +1,19 @@
 ---
 description: Generate Requirements content from a provided website module
 skills:
-  - requirements_analyzer
+  - requirements-analyzer
 ---
 
 # Workflow: Generate Requirements from Website Module
 
-> **MANDATORY SKILL:** You MUST load and carefully read the **`requirements_analyzer`** skill to understand the standard Requirements document format before starting this task.
+> **MANDATORY SKILL:** You MUST load and carefully read the **`requirements-analyzer`** skill (at `.claude/skills/requirements-analyzer/SKILL.md`) to understand the standard Requirements document format before starting this task.
 
 This workflow helps you analyze a provided module or web page and produce a detailed, accurate Requirements document for testing or development purposes.
 
 ## Steps
 
 1. **Information Gathering**
-   - Read the **`requirements_analyzer`** skill instructions to understand the expected output format.
+   - Read the **`requirements-analyzer`** skill instructions to understand the expected output format.
    - Obtain the URL, module name, description, or screenshots provided by the user.
    - If needed, ask the user for login credentials or any special states to consider.
 
