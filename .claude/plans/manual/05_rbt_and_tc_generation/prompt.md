@@ -170,5 +170,10 @@ Test: Each valid transition + invalid transitions (e.g., Completed → Created)
 
 ---
 
-> 💡 **Note:** If the number of scenarios from Step 4 is large, generate Test Cases **one Module at a time**.
-> Example: "Generate TCs for Module 1 and Module 2 first. I will request the remaining modules next."
+> 💡 **Note:** If there are more than **3 modules**, generate Test Cases **one Module at a time** and ask before continuing to the next module.
+> Example: "I will generate TCs for Module 1 now. Please confirm to continue with Module 2."
+
+---END---
+
+---
+> Mirrors: rbt-manual-testing SKILL.md — Step 5 (RBT & TC Generation)

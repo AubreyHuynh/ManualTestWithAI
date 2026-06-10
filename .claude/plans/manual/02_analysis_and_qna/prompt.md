@@ -53,3 +53,8 @@ Each question must:
 
 Present the analysis results in **well-structured Markdown**.
 ⏸️ **AFTER COMPLETING**, pause and wait for my answers to the questions before proceeding to Step 3.
+
+---END---
+
+---
+> Mirrors: rbt-manual-testing SKILL.md — Step 2 (Analysis & Q&A)

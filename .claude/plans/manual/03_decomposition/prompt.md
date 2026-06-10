@@ -41,3 +41,10 @@ Identify dependencies and data interactions between Modules:
 ---
 
 Present the results in **Markdown**, using tables or a tree diagram as appropriate.
+
+⏸️ **AFTER COMPLETING**, pause and wait for me to review the module breakdown before proceeding to Step 4.
+
+---END---
+
+---
+> Mirrors: rbt-manual-testing SKILL.md — Step 3 (Decomposition)

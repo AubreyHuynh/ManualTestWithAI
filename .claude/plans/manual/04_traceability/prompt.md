@@ -54,3 +54,8 @@ Present as a table:
 I will add missing items or confirm to proceed to Step 5 for detailed test case generation.
 
 > ⚠️ **This is a Human Checkpoint.** The tester must perform their own Risk Assessment for each Module before allowing the AI to generate detailed scenarios.
+
+---END---
+
+---
+> Mirrors: rbt-manual-testing SKILL.md — Step 4 (Traceability)

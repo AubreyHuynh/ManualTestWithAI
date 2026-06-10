@@ -46,3 +46,8 @@ Export the result as an **Artifact** (`.md` file) so I can:
 - Import into Jira/TestRail/Xray
 
 If the total number of Test Cases exceeds 30, split the artifact into multiple parts and ask me "Continue with Part X?" before generating the next part.
+
+---END---
+
+---
+> Mirrors: rbt-manual-testing SKILL.md — Step 6 (Template Mapping)

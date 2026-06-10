@@ -43,3 +43,8 @@ Pay special attention to:
 ---
 
 Please read all documents carefully and reply **"I have understood the context and am ready"** along with a brief Summary of the testing scope before we move on to Step 2.
+
+---END---
+
+---
+> Mirrors: rbt-manual-testing SKILL.md — Step 1 (Context & Role-Play)
