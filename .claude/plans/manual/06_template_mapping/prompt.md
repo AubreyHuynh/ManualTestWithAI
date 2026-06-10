@@ -1,11 +1,9 @@
-# ============================================================
 # STEP 6: FORMAT STANDARDIZATION (Template Mapping)
-# ============================================================
-# HOW TO USE:
-# 1. Send this prompt AFTER reviewing Test Cases in Step 5
-# 2. Customize the TC ID naming rule if needed
-# 3. Copy the output table → paste into Excel/Jira/TestRail
-# ============================================================
+
+> **How to use:**
+> 1. Send this prompt AFTER reviewing Test Cases in Step 5
+> 2. Customize the TC ID naming rule if needed
+> 3. Copy the output table → paste into Excel/Jira/TestRail
 
 ---START---
 
@@ -14,6 +12,7 @@ This is the final step. **Standardize the format** of all Test Cases generated i
 ## The table must include the following columns:
 
 | TC ID | Module | Risk Level | Test Title | Pre-Condition | Test Steps | Expected Result | Priority | Test Data |
+|-------|--------|------------|------------|---------------|------------|-----------------|----------|-----------|
 
 ## Table Rules:
 
@@ -47,3 +46,8 @@ Export the result as an **Artifact** (`.md` file) so I can:
 - Import into Jira/TestRail/Xray
 
 If the total number of Test Cases exceeds 30, split the artifact into multiple parts and ask me "Continue with Part X?" before generating the next part.
+
+---END---
+
+---
+> Mirrors: rbt-manual-testing SKILL.md — Step 6 (Template Mapping)

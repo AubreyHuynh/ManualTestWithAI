@@ -1,19 +1,19 @@
 ---
 description: Generate high-quality manual test cases following the 6-step AI-RBT (Risk-Based Testing) process from requirements.
 skills:
-  - rbt_manual_testing
-  - requirements_analyzer
+  - rbt-manual-testing
+  - requirements-analyzer
 ---
 
-> **MANDATORY SKILL:** You MUST load and carefully read the content of the **`rbt_manual_testing`** skill (at `.agent/skills/rbt_manual_testing/SKILL.md`) before starting this task. Use the **FULL RBT Mode** of the skill. Also refer to the **`requirements_analyzer`** skill to understand how to analyze interfaces if needed.
+> **MANDATORY SKILL:** You MUST load and carefully read the content of the **`rbt-manual-testing`** skill (at `.claude/skills/rbt-manual-testing/SKILL.md`) before starting this task. Use the **FULL RBT Mode** of the skill. Also refer to the **`requirements-analyzer`** skill to understand how to analyze interfaces if needed.
 
 # Workflow: Generate Manual Test Cases via AI-RBT Framework (FULL RBT Mode)
 
-This workflow uses the **FULL RBT Mode** of the `rbt_manual_testing` skill — the **AI-RBT (AI-Driven Risk-Based Testing)** process consisting of 6 sequential steps to generate manual test cases from requirements documents.
+This workflow uses the **FULL RBT Mode** of the `rbt-manual-testing` skill — the **AI-RBT (AI-Driven Risk-Based Testing)** process consisting of 6 sequential steps to generate manual test cases from requirements documents.
 
 > [!NOTE]
-> **This flow is for Antigravity (slash command).** The agent follows the instructions in the skill and does NOT need to read the prompt.txt file.
-> If the QA team wants to use a more detailed prompt (ChatGPT/Claude), copy-paste each step from `plans/manual/01-06/prompt.txt`.
+> **This flow is for Claude Code (slash command).** The agent follows the instructions in the skill and does NOT need to read the prompt.txt file.
+> - **Copy-Paste flow:** QA team wants to use a more detailed prompt, copy-paste each step from `plans/manual/01-06/prompt.md`.
 
 ## ⚠️ Execution Principles
 
@@ -25,7 +25,7 @@ This workflow uses the **FULL RBT Mode** of the `rbt_manual_testing` skill — t
 
 ## Steps to Execute
 
-Follow the detailed instructions in the `rbt_manual_testing` skill → **Mode 2: FULL RBT** section.
+Follow the detailed instructions in the `rbt-manual-testing` skill → **Mode 2: FULL RBT** section.
 
 ### Step 1: Context Initialization (Context & Role-play)
 1. Ask the user to provide: project name, system description, MVP goals, requirements documents
@@ -54,7 +54,7 @@ Follow the detailed instructions in the `rbt_manual_testing` skill → **Mode 2:
 4. **Specialized Field-Level Validation:**
    - List all input fields on the form/UI being tested
    - Generate validation TCs **separately for EACH field** based on its specific characteristics
-   - Reference the **Field-Level Validation Table** in the `rbt_manual_testing` skill
+   - Reference the **Field-Level Validation Table** in the `rbt-manual-testing` skill
    - **DO NOT** combine validation for multiple fields into 1 TC
 5. Full coverage: Happy Path, Negative, Boundary, Edge Cases
 6. Test Data must be specific (no generic placeholders)

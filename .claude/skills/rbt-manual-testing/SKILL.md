@@ -109,10 +109,12 @@ Generate test cases **quickly, with sufficient quality** from clear requirements
    - Priority (Critical / High / Medium / Low)
 6. **Output a standard Markdown table**, ready to copy into Excel/Jira
 
+> **Mid-generation ambiguity guard:** If at any point during QUICK mode generation you detect ambiguity in the requirements that cannot be resolved by a stated assumption, STOP immediately. Notify the user with: "Ambiguity detected: [describe it]. Options: (a) I assume [X] and continue QUICK mode, or (b) switch to FULL RBT for proper analysis. Which do you prefer?" Do not continue until the user responds.
+
 ## Output Table
 
 ```
-| TC ID | Module | Test Scenario | Pre-Condition | Test Steps | Test Data | Expected Result | Priority |
+| TC ID | Module | Test Scenario | Pre-Condition | Test Steps | Expected Result | Test Data | Priority |
 ```
 
 ## Test Data Rules (applies to both modes)
@@ -147,6 +149,10 @@ When a form/UI contains input fields, the agent **MUST** list each field and gen
 
 > **Principle:** Each field has its own characteristics → its own validation. The agent MUST analyze each field before generating TCs. Do not apply one generic validation set to all fields.
 
+## Output Format
+
+Export the final Markdown table as an **Artifact** file named `test_cases_<module>.md` so the user can save or copy it directly into Excel/Jira/TestRail.
+
 ## Anti-Patterns (Mode QUICK)
 
 - ❌ Generic / placeholder test data
@@ -169,8 +175,8 @@ A formal, sequential process for complex modules. Includes Ambiguity analysis, s
 
 > [!NOTE]
 > **Two separate usage flows:**
-> - **Antigravity flow (slash command):** Agent follows the general instructions below. The agent does NOT need to read prompt.txt files.
-> - **Copy-Paste flow (ChatGPT/Claude):** QA team copies the detailed prompt content from `plans/manual/01-06/prompt.txt` into the AI chat, one step at a time.
+> - **Claude Code flow (slash command):** Agent follows the general instructions below. The agent does NOT need to read prompt.md files.
+> - **Copy-Paste flow:** QA team copies the detailed prompt content from `plans/manual/01-06/prompt.md` into the AI chat, one step at a time.
 
 ### Step 1: Context & Role-Play (Context Initialization)
 
@@ -204,7 +210,7 @@ A formal, sequential process for complex modules. Includes Ambiguity analysis, s
    - Contradictory requirements
    - Unclear requirements
 3. List numbered Q&A questions (Q1, Q2...) for the user/PO/BA to answer; each question includes context and a fallback assumption if unanswered
-4. **STOP — Wait for user responses** to the questions before continuing
+4. **STOP — Wait for user responses** to the questions before continuing. If the user has not yet responded, re-state the list of open questions and wait. Do not advance to Step 3 without explicit user answers or stated assumptions.
 
 **Output:** List of flows + Ambiguities + Q&A questions.
 
@@ -226,6 +232,8 @@ A formal, sequential process for complex modules. Includes Ambiguity analysis, s
 
 **Output:** List of Modules/Sub-modules + Dependencies.
 
+> ⏸️ **STOP — Wait for user to review and confirm the module breakdown before proceeding to Step 4.** If the user has not yet responded, re-state the pause prompt and wait. Under no circumstances advance to Step 4 without explicit user confirmation.
+
 ---
 
 ### Step 4: Traceability (Coverage Assurance)
@@ -241,7 +249,7 @@ A formal, sequential process for complex modules. Includes Ambiguity analysis, s
    - Business Logic
    - Data Integrity
    - Error Handling
-4. **Wait for user review** of the scenario list before generating detailed test cases
+4. **Wait for user review** of the scenario list before generating detailed test cases. If the user has not yet responded, re-display the scenario table and wait. Do not advance to Step 5 without explicit user confirmation or additions.
 
 **Output:** Traceability Matrix + High-Level Test Scenarios.
 
@@ -266,7 +274,7 @@ A formal, sequential process for complex modules. Includes Ambiguity analysis, s
    - Test Steps (numbered)
    - Expected Results (numbered to match steps)
    - Test Data (**must be specific**, no generic placeholders)
-   - Priority
+   - Priority (Critical / High / Medium / Low)
 3. Ensure diverse coverage:
    - Happy Path
    - Negative Path (boundary values, character overflow)
@@ -281,7 +289,14 @@ A formal, sequential process for complex modules. Includes Ambiguity analysis, s
    - **Boundary Value Analysis (BVA):** Test at boundary values (min, min+1, max-1, max)
    - **Decision Table:** List condition combinations → expected outcomes (for multi-condition logic)
    - **State Transition:** Test valid and invalid state transitions (for workflows)
-6. If there are too many scenarios → generate module by module, ask the user before continuing
+6. If there are more than 3 modules → generate one module at a time, ask the user before continuing to the next module
+
+**Self-Check before proceeding to Step 6:** Review your output against this checklist. Fix any gaps before continuing:
+- [ ] No test data is generic or uses placeholders (every value is specific)
+- [ ] Every `Text` and `Textarea` field has at minimum one XSS TC (`<script>alert(1)</script>`) and one SQL injection TC (`' OR 1=1--`)
+- [ ] Every input field has its own validation TCs — none are merged across fields
+- [ ] Negative and boundary cases exist for every field with defined constraints
+- [ ] Priority is set for every TC using: Critical / High / Medium / Low
 
 **Output:** Detailed Test Cases list with Risk Level.
 
@@ -295,7 +310,7 @@ A formal, sequential process for complex modules. Includes Ambiguity analysis, s
 1. Standardize all test cases into a Markdown table:
 
 ```
-| TC ID | Module | Risk Level | Test Title | Pre-Condition | Test Steps | Expected Result | Priority | Test Data |
+| TC ID | Module | Risk Level | Test Title | Pre-Condition | Test Steps | Expected Result | Test Data | Priority |
 ```
 
 2. Table rules:
@@ -332,15 +347,13 @@ Sample prompt templates for the FULL RBT process are located at:
 
 ```
 plans/manual/
-├── 01_context_and_roleplay/prompt.txt
-├── 02_analysis_and_qna/prompt.txt
-├── 03_decomposition/prompt.txt
-├── 04_traceability/prompt.txt
-├── 05_rbt_and_tc_generation/prompt.txt
-└── 06_template_mapping/prompt.txt
+├── 01_context_and_roleplay/prompt.md
+├── 02_analysis_and_qna/prompt.md
+├── 03_decomposition/prompt.md
+├── 04_traceability/prompt.md
+├── 05_rbt_and_tc_generation/prompt.md
+└── 06_template_mapping/prompt.md
 ```
-
-The agent should read the corresponding prompt template **before** executing each step (FULL RBT mode).
 
 Mode QUICK does not require reading prompt templates — the agent applies EP/BVA/Decision Table techniques directly.
 

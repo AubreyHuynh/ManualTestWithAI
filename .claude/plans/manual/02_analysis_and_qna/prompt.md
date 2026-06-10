@@ -1,12 +1,10 @@
-# ============================================================
 # STEP 2: REQUIREMENTS ANALYSIS & Q&A (Analysis & QnA)
-# ============================================================
-# HOW TO USE:
-# 1. Send this prompt AFTER the AI has confirmed it understands the context in Step 1
-# 2. Read through the questions the AI generates
-# 3. Answer each question for the AI
-# 4. Once all questions are answered → move to Step 3
-# ============================================================
+
+> **How to use:**
+> 1. Send this prompt AFTER the AI has confirmed it understands the context in Step 1
+> 2. Read through the questions the AI generates
+> 3. Answer each question for the AI
+> 4. Once all questions are answered → move to Step 3
 
 ---START---
 
@@ -55,3 +53,8 @@ Each question must:
 
 Present the analysis results in **well-structured Markdown**.
 ⏸️ **AFTER COMPLETING**, pause and wait for my answers to the questions before proceeding to Step 3.
+
+---END---
+
+---
+> Mirrors: rbt-manual-testing SKILL.md — Step 2 (Analysis & Q&A)

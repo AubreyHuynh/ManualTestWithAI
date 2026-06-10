@@ -1,12 +1,10 @@
-# ============================================================
 # STEP 4: COVERAGE ASSURANCE (Traceability & Gap Analysis)
-# ============================================================
-# HOW TO USE:
-# 1. Send this prompt AFTER reviewing the decomposition output from Step 3
-# 2. Review the list of scenarios the AI generates
-# 3. Add any missing scenarios
-# 4. Confirm completion → move to Step 5
-# ============================================================
+
+> **How to use:**
+> 1. Send this prompt AFTER reviewing the decomposition output from Step 3
+> 2. Review the list of scenarios the AI generates
+> 3. Add any missing scenarios
+> 4. Confirm completion → move to Step 5
 
 ---START---
 
@@ -56,3 +54,8 @@ Present as a table:
 I will add missing items or confirm to proceed to Step 5 for detailed test case generation.
 
 > ⚠️ **This is a Human Checkpoint.** The tester must perform their own Risk Assessment for each Module before allowing the AI to generate detailed scenarios.
+
+---END---
+
+---
+> Mirrors: rbt-manual-testing SKILL.md — Step 4 (Traceability)

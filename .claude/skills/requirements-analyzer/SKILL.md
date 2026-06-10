@@ -49,7 +49,45 @@ This is the core section for Automation Testers:
 ### 3.4. Business Rules & Validations
 List in detail the expected Validation Messages when a user enters incorrect data.
 
+### 3.5. Business/User Flows
+Document the step-by-step flow for each core function. Format:
+
+```
+Flow: [Flow Name]
+  Actor: [User role]
+  1. Actor performs [action]
+  2. System responds with [response / state change]
+  3. (continue until flow ends or branches)
+  Branch: [condition] → [alternate outcome]
+```
+
+List at minimum: the primary Happy Path flow and any visible alternate/exception paths.
+
+### 3.6. Non-Functional Requirements *(if observable)*
+Structure observations under these categories:
+- **Compatibility:** Browsers/devices specified or observable in the UI
+- **Performance:** Page load expectations, response time indicators (loading spinners, progress bars)
+- **Accessibility:** Keyboard navigation, ARIA labels, color contrast (if observable)
+
+If a category has no observable evidence, write: `[Not observed — clarify with PO if relevant]`
+
 ## 4. Strict Rules
 - Always write in **English**.
 - Do not infer complex business requirements without evidence from the UI. If logic is missing, list them under "Questions/Clarifications for PO-User".
 - If Playwright MCP is available, prefer opening a real browser to screenshot/capture the interface when needed.
+
+## 5. Playwright Fallback
+If Playwright MCP is unavailable, analyze based on the provided URL, screenshots, or pasted HTML/DOM content.
+
+For every section you could not directly verify in a live browser, append the tag:
+`[UNVERIFIED — based on static analysis only]`
+
+This makes it clear to the reader which parts of the document may need live verification before test case generation begins.
+
+## 6. Definition of Done
+A Requirements document is complete when ALL of the following are true:
+- [ ] Sections 3.1 through 3.6 are present (or explicitly marked `[Not applicable]`)
+- [ ] Every input field in Section 3.3 has: Field Name, Type, Required/Optional, and at least one Validation Rule
+- [ ] No field is listed without its data constraints (length, format, allowed values)
+- [ ] All unverifiable content is tagged with `[UNVERIFIED — based on static analysis only]`
+- [ ] Section 3.4 lists at least one validation message per required field

@@ -1,12 +1,10 @@
-# ============================================================
 # STEP 1: CONTEXT INITIALIZATION (Context & Role-play)
-# ============================================================
-# HOW TO USE:
-# 1. Copy the content below the "---START---" line
-# 2. Replace all [...] placeholders with your actual data
-# 3. Paste into an AI chat and send
-# 4. Wait for the AI to confirm it understands the context before moving to Step 2
-# ============================================================
+
+> **How to use:**
+> 1. Copy the content below the `---START---` line
+> 2. Replace all `[...]` placeholders with your actual data
+> 3. Paste into an AI chat and send
+> 4. Wait for the AI to confirm it understands the context before moving to Step 2
 
 ---START---
 
@@ -45,3 +43,8 @@ Pay special attention to:
 ---
 
 Please read all documents carefully and reply **"I have understood the context and am ready"** along with a brief Summary of the testing scope before we move on to Step 2.
+
+---END---
+
+---
+> Mirrors: rbt-manual-testing SKILL.md — Step 1 (Context & Role-Play)

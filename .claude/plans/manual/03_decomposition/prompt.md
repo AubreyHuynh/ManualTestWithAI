@@ -1,11 +1,9 @@
-# ============================================================
 # STEP 3: SYSTEM DECOMPOSITION (Decomposition)
-# ============================================================
-# HOW TO USE:
-# 1. Send this prompt AFTER all Q&A questions from Step 2 have been answered
-# 2. Customize the decomposition guidance if needed
-# 3. Review the output → move to Step 4
-# ============================================================
+
+> **How to use:**
+> 1. Send this prompt AFTER all Q&A questions from Step 2 have been answered
+> 2. Customize the decomposition guidance if needed
+> 3. Review the output → move to Step 4
 
 ---START---
 
@@ -43,3 +41,10 @@ Identify dependencies and data interactions between Modules:
 ---
 
 Present the results in **Markdown**, using tables or a tree diagram as appropriate.
+
+⏸️ **AFTER COMPLETING**, pause and wait for me to review the module breakdown before proceeding to Step 4.
+
+---END---
+
+---
+> Mirrors: rbt-manual-testing SKILL.md — Step 3 (Decomposition)

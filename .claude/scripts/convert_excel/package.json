@@ -1,0 +1,15 @@
+{
+  "name": "manual-test-with-ai",
+  "version": "1.0.0",
+  "description": "Convert Excel test cases for Claude AI manual testing workflows",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Huynh Minh Nghia",
+  "license": "ISC",
+  "dependencies": {
+    "xlsx": "^0.18.5"
+  }
+}
