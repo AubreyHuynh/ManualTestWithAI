@@ -11,7 +11,7 @@ Audit and improve the Manual Test with AI toolkit across all layers — Skills, 
 
 Five categories of issues found during audit:
 
-1. **Stale branding** — "Antigravity" references in two files (already partially staged)
+1. **Stale branding** — "Claude" / project-aligned names not used consistently across scripts and specs
 2. **Broken references** — Wrong paths, wrong file extensions, wrong skill names (underscores vs hyphens)
 3. **Logic errors** — Missing pause at Step 3, contradictory instructions, inconsistent Priority levels, mismatched TC column order
 4. **Omissions** — Empty rules file, missing sections in requirements-analyzer skill, no artifact export in QUICK mode, vague thresholds
@@ -40,7 +40,7 @@ Layer 4 — rules/manual_rules.md
 
 ---
 
-## Section 1 — Cleanup (Antigravity + Broken References)
+## Section 1 — Cleanup (Stale Branding + Broken References)
 
 ### Files to change
 

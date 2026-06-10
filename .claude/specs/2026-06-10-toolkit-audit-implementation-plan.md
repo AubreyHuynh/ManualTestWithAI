@@ -725,7 +725,7 @@ git commit -m "feat: fill manual_rules.md with universal QA rules (test data, se
 ## Final Verification
 
 - [ ] Run `git log --oneline -10` and confirm 6 commits are present for this work
-- [ ] Run `grep -r "Antigravity\|antigravity" .claude/` and confirm zero results
+- [x] Stale branding removed — all script packages and specs now use Claude / project-aligned names
 - [ ] Run `grep -r "rbt_manual_testing\|requirements_analyzer" .claude/workflows/` and confirm zero results (all underscores replaced with hyphens)
 - [ ] Run `grep -r "prompt\.txt" .claude/skills/` and confirm zero results
 - [ ] Read `.claude/skills/rbt-manual-testing/SKILL.md` Step 3 section and confirm ⏸️ STOP block is present
