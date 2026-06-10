@@ -109,6 +109,8 @@ Generate test cases **quickly, with sufficient quality** from clear requirements
    - Priority (Critical / High / Medium / Low)
 6. **Output a standard Markdown table**, ready to copy into Excel/Jira
 
+> **Mid-generation ambiguity guard:** If at any point during QUICK mode generation you detect ambiguity in the requirements that cannot be resolved by a stated assumption, STOP immediately. Notify the user with: "Ambiguity detected: [describe it]. Options: (a) I assume [X] and continue QUICK mode, or (b) switch to FULL RBT for proper analysis. Which do you prefer?" Do not continue until the user responds.
+
 ## Output Table
 
 ```
@@ -146,6 +148,10 @@ When a form/UI contains input fields, the agent **MUST** list each field and gen
 | **Textarea** | Max length · Line breaks · HTML tags · Resize (if UI allows) · Character counter (if present) |
 
 > **Principle:** Each field has its own characteristics → its own validation. The agent MUST analyze each field before generating TCs. Do not apply one generic validation set to all fields.
+
+## Output Format
+
+Export the final Markdown table as an **Artifact** file named `test_cases_<module>.md` so the user can save or copy it directly into Excel/Jira/TestRail.
 
 ## Anti-Patterns (Mode QUICK)
 
@@ -204,7 +210,7 @@ A formal, sequential process for complex modules. Includes Ambiguity analysis, s
    - Contradictory requirements
    - Unclear requirements
 3. List numbered Q&A questions (Q1, Q2...) for the user/PO/BA to answer; each question includes context and a fallback assumption if unanswered
-4. **STOP — Wait for user responses** to the questions before continuing
+4. **STOP — Wait for user responses** to the questions before continuing. If the user has not yet responded, re-state the list of open questions and wait. Do not advance to Step 3 without explicit user answers or stated assumptions.
 
 **Output:** List of flows + Ambiguities + Q&A questions.
 
@@ -243,7 +249,7 @@ A formal, sequential process for complex modules. Includes Ambiguity analysis, s
    - Business Logic
    - Data Integrity
    - Error Handling
-4. **Wait for user review** of the scenario list before generating detailed test cases
+4. **Wait for user review** of the scenario list before generating detailed test cases. If the user has not yet responded, re-display the scenario table and wait. Do not advance to Step 5 without explicit user confirmation or additions.
 
 **Output:** Traceability Matrix + High-Level Test Scenarios.
 
@@ -283,7 +289,14 @@ A formal, sequential process for complex modules. Includes Ambiguity analysis, s
    - **Boundary Value Analysis (BVA):** Test at boundary values (min, min+1, max-1, max)
    - **Decision Table:** List condition combinations → expected outcomes (for multi-condition logic)
    - **State Transition:** Test valid and invalid state transitions (for workflows)
-6. If there are too many scenarios → generate module by module, ask the user before continuing
+6. If there are more than 3 modules → generate one module at a time, ask the user before continuing to the next module
+
+**Self-Check before proceeding to Step 6:** Review your output against this checklist. Fix any gaps before continuing:
+- [ ] No test data is generic or uses placeholders (every value is specific)
+- [ ] Every `Text` and `Textarea` field has at minimum one XSS TC (`<script>alert(1)</script>`) and one SQL injection TC (`' OR 1=1--`)
+- [ ] Every input field has its own validation TCs — none are merged across fields
+- [ ] Negative and boundary cases exist for every field with defined constraints
+- [ ] Priority is set for every TC using: Critical / High / Medium / Low
 
 **Output:** Detailed Test Cases list with Risk Level.
 
